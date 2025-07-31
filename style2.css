@@ -259,7 +259,10 @@ strong {
     font-size: 27px;
     margin-bottom: 10px;
 }
-
+.inner-button{
+    display: flex;
+    justify-content: center;
+}
 .step-box .step-content {
     font-size: 17px;
 }

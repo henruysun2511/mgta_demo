@@ -15,73 +15,97 @@
 
     <link rel="stylesheet" href="../assets/css/base.css">
     <style>
-        .footer .footer-top {
+        .footer-top {
+            background: linear-gradient(135deg, #5c6ff4, #e870c2);
+            padding: 20px 0;
+        }
+
+        .footer-top ul {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 0;
+        }
+
+        .footer-top ul li {
+            display: flex;
+            gap: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .footer-top ul li p {
+            margin: 0;
+        }
+
+        .footer .footer-main {
             display: flex;
             justify-content: space-evenly;
             background-color: #000000;
             padding: 30px 10px;
         }
 
-        .footer .footer-top .about-us {
+        .footer .footer-main .about-us {
             margin-right: 20px;
 
             width: 300px;
         }
 
-        .footer .footer-top .about-us h1 {
+        .footer .footer-main .about-us h1 {
             font-size: 20px;
             color: white;
             margin-bottom: 20px;
         }
 
-        .footer .footer-top .about-us .list-box {
-            background-color: #004aad;
+        .footer .footer-main .about-us .list-box {
+            background-color: #69dfe1;
             width: 200px;
             height: 10px;
             border-radius: 15px;
             margin-bottom: 20px;
         }
 
-        .footer .footer-top .about-us ul {
+        .footer .footer-main .about-us ul {
             list-style-type: none;
             padding: 0;
             display: flex;
             flex-direction: column;
         }
 
-        .footer .footer-top .about-us ul li {
+        .footer .footer-main .about-us ul li {
             margin-bottom: 10px;
         }
 
-        .footer .footer-top .about-us ul li a {
+        .footer .footer-main .about-us ul li a {
             color: white;
         }
 
-        .footer .footer-top .about-us ul li a:hover {
-            color: #004aad;
+        .footer .footer-main .about-us ul li a:hover {
+            color: #f6c964;
         }
 
-        .footer .footer-top .about-us ul li p {
+        .footer .footer-main .about-us ul li p {
             color: white;
             margin-bottom: 0;
         }
 
-        .footer .footer-top .about-us .social {
+        .footer .footer-main .about-us .social {
             display: flex;
             align-items: center;
         }
 
-        .footer .footer-top .about-us .social li {
+        .footer .footer-main .about-us .social li {
             margin-right: 10px;
         }
 
-        .footer .footer-top .about-us .social li .inner-image {
+        .footer .footer-main .about-us .social li .inner-image {
             height: 40px;
             width: 40px;
 
         }
 
-        .footer .footer-top .about-us .social li .inner-image img {
+        .footer .footer-main .about-us .social li .inner-image img {
             height: 100%;
             width: 100%;
         }
@@ -95,95 +119,7 @@
             display: flex;
             align-items: center;
             padding: 10px 110px;
-        }
-
-        .footer-bottom .inner-logo {
-            height: 100px;
-            width: auto;
-        }
-
-        .footer-bottom .inner-logo img {
-            height: 100%;
-            width: 100%;
-        }
-
-        .footer-bottom .inner-content ul {
-            list-style: none;
-        }
-
-        .footer-bottom .inner-content ul li p {
             color: white;
-        }
-
-        @media screen and (max-width: 1024px) {
-            .footer .footer-top {
-                flex-direction: column;
-                align-items: center;
-                gap: 30px;
-                padding: 30px 20px;
-            }
-
-            .footer .footer-top .about-us {
-                margin-right: 0;
-                width: 100%;
-                max-width: 400px;
-            }
-
-            .footer .footer-top .about-us ul {
-                padding-left: 0;
-            }
-
-            .footer .footer-top .about-us ul li {
-                text-align: left;
-            }
-
-            .footer .footer-top .about-us .social {
-                justify-content: center;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                padding: 20px;
-                gap: 20px;
-            }
-
-            .footer-bottom .inner-logo {
-                height: 80px;
-            }
-
-            .footer-bottom .inner-content ul li p {
-                font-size: 14px;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .footer .footer-top {
-                padding: 20px 10px;
-            }
-
-            .footer .footer-top .about-us h1 {
-                font-size: 18px;
-            }
-
-            .footer .footer-top .about-us .list-box {
-                width: 150px;
-                height: 8px;
-            }
-
-            .footer-bottom .inner-logo {
-                height: 60px;
-            }
-
-            .footer-bottom .inner-content ul li p {
-                font-size: 13px;
-            }
-
-            .footer .footer-top .about-us .social li .inner-image {
-                height: 32px;
-                width: 32px;
-            }
         }
     </style>
 
@@ -191,10 +127,33 @@
 
 <body>
     <div class="footer" id="footer">
-
         <div class="footer-top">
+            <ul>
+                <li>
+                    <div class="inner-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <p>03.999.78686</p>
+                </li>
+                <li>
+                    <div class="inner-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <p>mgtahanoi@gmail.com</p>
+                </li>
+                <li>
+                    <div class="inner-icon">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <p>Tiếng Anh Cho Học Sinh Cấp 2 Mất Gốc</p>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="footer-main">
             <div class="about-us">
-                <h1>VỀ BINGEBOX CINEMA</h1>
+                <h1>VỀ MGTA</h1>
                 <div class="list-box"></div>
                 <ul>
                     <li><a href="./aboutUs.html">Về chúng tôi</a></li>
@@ -227,58 +186,11 @@
                         <p><b>Email:</b> huysun2511@gmail.com</p>
                     </li>
                 </ul>
-                <ul class="social">
-                    <li>
-                        <a href="#">
-                            <div class="inner-image">
-                                <img src="./assets/images/socials/Facebook_Logo.png">
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="inner-image">
-                                <img src="./assets/images/socials/Instagram_logo.png">
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="inner-image">
-                                <img src="./assets/images/socials/zalo_logo.png">
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="inner-image">
-                                <img src="./assets/images/socials/tiktok_logo.png">
-                            </div>
-                        </a>
-                    </li>
-                </ul>
             </div>
 
         </div>
         <div class="footer-bottom">
-            <div class="inner-logo"><img src="./assets/images/bingebox_logo.png"></div>
-            <div class="inner-content">
-                <ul>
-                    <li>
-                        <p><b>Công ty TNHH Nhóm 4 Binge Box Việt Nam</b></p>
-                    </li>
-                    <li>
-                        <p><b>Giấy CNĐKDN:</b> Giấy phép kinh doanh số: 0104597158. Đăng ký lần đầu ngày 15 tháng 04 năm
-                            2010</p>
-                    </li>
-                    <li>
-                        <p><b>Địa chỉ: </b> Tầng thượng, tòa nhà Lotte, 54 P. Liễu Giai, Ngọc Khánh, Ba Đình, Hà Nội</p>
-                    </li>
-                    <li>
-                        <p><b>Hotline: </b> 19002005</p>
-                    </li>
-                </ul>
-            </div>
+            © 2025. Bản quyền thuộc về Tác giả. Nghiêm cấm sao chép dưới mọi hình thức.
         </div>
     </div>
 
