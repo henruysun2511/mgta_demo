@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Lịch học</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0e0e12;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .schedule-table {
+      display: grid;
+      grid-template-columns: 100px repeat(7, 1fr);
+      border: 1px solid #333;
+      border-collapse: collapse;
+    }
+
+    .schedule-table > div {
+      border: 1px solid #333;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .header {
+      background-color: #1c1c24;
+      font-weight: bold;
+      color: #fdd835;
+    }
+
+    .ca-label {
+      background-color: #1f1f29;
+      font-weight: bold;
+      color: #ccc;
+    }
+
+    .class-box {
+      background-color: #262631;
+      padding: 8px;
+      margin: 4px auto;
+      border-radius: 6px;
+      color: #fff;
+    }
+
+    .class-box:hover {
+      background-color: #373748;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📅 Lịch học</h2>
+
+  <div class="schedule-table">
+    <!-- Hàng tiêu đề -->
+    <div class="header">Ca</div>
+    <div class="header">01/08<br>Thứ Hai</div>
+    <div class="header">02/08<br>Thứ Ba</div>
+    <div class="header">03/08<br>Thứ Tư</div>
+    <div class="header">04/08<br>Thứ Năm</div>
+    <div class="header">05/08<br>Thứ Sáu</div>
+    <div class="header">06/08<br>Thứ Bảy</div>
+    <div class="header">07/08<br>Chủ nhật</div>
+
+    <!-- Ca 1 -->
+    <div class="ca-label">Ca 1</div>
+    <div></div>
+    <div><div class="class-box">Lớp thứ 2</div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <!-- Ca 2 -->
+    <div class="ca-label">Ca 2</div>
+    <div><div class="class-box">Lớp thứ nhất ở đây</div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div><div class="class-box">Lớp thứ 3</div></div>
+    <div></div>
+  </div>
+
+</body>
+</html>

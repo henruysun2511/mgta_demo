@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BingeBox Cinema</title>
+    <link rel="icon" type="image/png" href="/assets/images/bingebox_logo.png">
+
+    <!-- Nhúng font và icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Nhúng css -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #5c6ff4, #e870c2) !important;
+        }
+
+        .section-0 {
+            padding-top: 200px;
+        }
+
+        .inner-wrap {
+            padding: 0 200px;
+        }
+
+        .practice,
+        .rank,
+        .comment {
+            border-radius: 10px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            margin-bottom: 20px;
+            /* border: 5px dashed #f6c964; */
+            background-color: white;
+        }
+
+        .practice h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .practice .inner-icon {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: black;
+            margin: 20px 20px;
+        }
+
+        .practice .inner-icon p {
+            margin: 0;
+        }
+
+        .practice .practice-tag {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 20px;
+        }
+
+        .practice .practice-tag p {
+            background-color: #F2F8FE;
+            padding: 5px;
+            border-radius: 20px;
+            margin-bottom: 3px;
+        }
+
+        .p1 {
+            margin: 20px 20px;
+        }
+
+        .button-practice {
+            background-color: #f6c964;
+            width: 150px;
+            padding: 5px 15px;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 18px;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        th {
+            color: #ffcc00;
+            font-size: 18px;
+        }
+
+        .rank-1 {
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        .rank-2 {
+            color: #C0C0C0;
+        }
+
+        .rank-3 {
+            color: #CD7F32;
+        }
+    </style>
+    <style>
+        .comment h3 {
+            margin-bottom: 20px;
+        }
+
+        .inner-input {
+            display: flex;
+            margin-bottom: 50px;
+        }
+
+        input {
+            width: 100%;
+        }
+
+        .comment-user {
+            display: flex;
+            gap: 20px;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .comment-user .comment-image {
+            height: 70px;
+            width: 70px;
+        }
+
+        .comment-user .comment-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .comment-name {
+            font-weight: 600;
+            color: #f6c964;
+            margin-bottom: 2px;
+        }
+
+        .comment-content{
+            margin-bottom: 10px;
+            width: 650px;
+        }
+
+        .comment-reply{
+            cursor: pointer;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="section-0"></div>
+
+    <div class="section-1">
+        <div class="inner-wrap">
+            <div class="row">
+                <div class="col-8">
+                    <div class="practice">
+                        <h1>LUYỆN KĨ NĂNG ĐỌC HIỂU</h1>
+                        <p>Ngày đăng: 01/08/2025</p>
+                        <h3>Thông tin chung</h3>
+                        <div class="inner-icon">
+                            <i class="fa-solid fa-users"></i>
+                            <p>Đối tượng: Lớp 6</p>
+                        </div>
+                        <div class="inner-icon">
+                            <i class="fa-solid fa-clock"></i>
+                            <p>Thời gian làm bài: 40 phút</p>
+                        </div>
+                        <div class="inner-icon">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <p>Số lượng câu hỏi: 50 câu hỏi</p>
+                        </div>
+                        <h3>Dạng bài</h3>
+                        <div class="practice-tag">
+                            <p>#Đọc hiểu</p>
+                            <p>#Điền từ</p>
+                            <p>#Viết lại câu</p>
+                        </div>
+                        <h3>Chi tiết câu hỏi:</h3>
+                        <p class="p1">Câu trắc nghiệm: 40 câu</p>
+                        <p class="p1">Câu điền đáp án: 10 câu</p>
+
+                        <div class="button-practice" onclick="handleClick()">LUYỆN TẬP</div>
+                    </div>
+                    <div class="comment">
+                        <h3>Bình luận</h3>
+                        <div class="inner-input">
+                            <input type="text" placeholder="Chia sẻ cảm nghĩ của em sau khi làm bài">
+                            <div class="button-practice">Gửi</div>
+                        </div>
+                        <div class="comment-user">
+                            <div class="comment-image">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg"
+                                    alt="">
+                            </div>
+                            <div class="comment-info">
+                                <div class="comment-name">Mark Zurkeberg</div>
+                                <div class="comment-content">Khó quá ae ui:((((</div>
+                                <a class="comment-reply">Trả lời</a>
+                            </div>
+                        </div>
+                         <div class="comment-user">
+                            <div class="comment-image">
+                                <img src="https://cafefcdn.com/zoom/700_438/203337114487263232/2022/3/3/photo1646280815645-1646280816151764748403.jpg"
+                                    alt="">
+                            </div>
+                            <div class="comment-info">
+                                <div class="comment-name">Nhat Huy</div>
+                                <div class="comment-content">Cá nhân tôi thấy vừa sức nha ae</div>
+                                <a class="comment-reply">Trả lời</a>
+                            </div>
+                        </div>
+                        <div class="comment-user">
+                            <div class="comment-image">
+                                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRdfAh69tet8Y1KRQBCDPDxc0qVgDIn6U6Hm2J5aXTrqAI_8PJ0dL7NFo-K-Trg2ATUV4elt8GY0gyhEilslUKCjA"
+                                    alt="">
+                            </div>
+                            <div class="comment-info">
+                                <div class="comment-name">Hủy diệt bài tập</div>
+                                <div class="comment-content">Đề thi khá sát với nội dung đã học, đặc biệt phần ngữ pháp và từ vựng đều được thiết kế hợp lý. Em thấy phần đọc hiểu có độ khó vừa phải, giúp phân loại rõ học sinh. Nhờ ôn luyện kỹ nên em làm bài tự tin hơn. Cảm ơn cô đã hỗ trợ em trong suốt quá trình học và luyện đề!"</div>
+                                <a class="comment-reply">Trả lời</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="rank">
+                        <h2>🏆 BẢNG XẾP HẠNG</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Hạng</th>
+                                    <th>Học sinh</th>
+                                    <th>Lớp</th>
+                                    <th>Điểm</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="rank-1">🥇 1</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>6A</td>
+                                    <td>9.8</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank-2">🥈 2</td>
+                                    <td>Trần Thị B</td>
+                                    <td>6B</td>
+                                    <td>9.5</td>
+                                </tr>
+                                <tr>
+                                    <td class="rank-3">🥉 3</td>
+                                    <td>Lê Văn C</td>
+                                    <td>6C</td>
+                                    <td>9.0</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Phạm Thị D</td>
+                                    <td>6A</td>
+                                    <td>8.7</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Hoàng Văn E</td>
+                                    <td>6B</td>
+                                    <td>8.0</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>6A</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Nguyễn Văn D</td>
+                                    <td>6B</td>
+                                    <td>3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-- <div id="footer"></div> -->
+
+
+
+
+
+<script>
+    const handleClick = () => {
+        window.location.href = `progress.html`;
+    }
+</script>
+
+
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>

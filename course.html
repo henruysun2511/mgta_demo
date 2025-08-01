@@ -23,19 +23,771 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Nhúng css -->
+    <style>
+        .section-0 {
+            padding-top: 300px;
+        }
 
-    
+        .inner-wrap {
+            margin: 0 250px;
+        }
+
+        .section-1 {
+            margin: 50px 0;
+        }
+
+        .section-1 h1 {
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .section-1 ul {
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+
+        .section-1 ul li {
+            font-size: 20px;
+            border: 2px solid #e88ec6;
+            border-radius: 45px;
+            padding: 5px 15px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .section-2 {
+            margin-bottom: 150px;
+        }
+
+        .section-2 ul {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 0;
+        }
+
+        .section-2 ul li {
+            font-size: 25px;
+            font-weight: 500px;
+            width: 50%;
+            text-align: center;
+            text-transform: uppercase;
+            color: gray;
+            cursor: pointer;
+            border-bottom: 1px solid gray;
+        }
+
+
+
+        .pratice-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .practice-item {
+            border: 1px solid rgb(156, 154, 154);
+            padding: 15px;
+            border-radius: 15px;
+            margin: 15px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .practice-item h3,
+        .practice-history h3 {
+            font-size: 20px;
+            font-weight: 600;
+
+        }
+
+        .practice-item .inner-icon {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: gray;
+        }
+
+        .practice-item .inner-icon p {
+            margin: 0;
+        }
+
+        .practice-item .practice-tag,
+        .practice-history .practice-tag {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+
+        .practice-item .practice-tag p,
+        .practice-history .practice-tag p {
+            background-color: #F2F8FE;
+            padding: 5px;
+            border-radius: 20px;
+            margin-bottom: 3px;
+        }
+
+        .practice-item .practice-status {
+            background-color: #6BB175;
+            padding: 1px 5px;
+            margin: 10px 0;
+            color: white;
+            text-align: center;
+            width: 100px;
+        }
+
+        .button-detail {
+            text-align: center;
+            border-radius: 2px;
+            margin: 20px 0 0 0;
+            background-color: white;
+        }
+
+        .practice-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .practice-item .practice-status.ps-1 {
+            background-color: rgb(234, 46, 46);
+        }
+
+        .practice-search {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            font-size: 20px;
+            margin: 20px 0;
+        }
+
+        .practice-checkbox {
+            display: flex;
+            gap: 30px;
+            font-size: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .practice-checkbox label {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .practice-checkbox input {
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+
+        form {
+            margin: 40px 0;
+        }
+
+        form button {
+            background-color: #e88ec6;
+            border: 0;
+            padding: 5px 25px;
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 10px;
+        }
+
+
+
+        .schedule,
+        .practice-wrap {
+            display: none;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .section-2 ul li.active {
+            color: #f6c964;
+            border-bottom: 2px solid #f6c964;
+        }
+
+        .section-0 {
+            background: linear-gradient(135deg, #5c6ff4, #e870c2);
+            height: 900px;
+            z-index: 1;
+        }
+
+        .practice-history {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .section-0 h1 {
+            margin-bottom: 30px;
+            color: white;
+        }
+    </style>
+    <style>
+        .date-picker {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+        }
+
+        .date-info {
+            width: 100%;
+            margin-bottom: 20px;
+            border-right: 1px solid rgb(179, 175, 175);
+        }
+
+        .date-item {
+            background-color: white;
+            padding: 10px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            border-bottom: 5px solid #69dfe1;
+            margin-bottom: 50px;
+        }
+
+        .day {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .route {
+            font-weight: 700;
+        }
+
+        .study-item {
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .link {
+            background-color: #597CEF;
+            color: white;
+            padding: 5px 20px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .study-info {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+    </style>
+
+
 
 </head>
 
 <body>
     <div id="header"></div>
+    <div class="section-0">
+        <div class="container">
+            <h1>Kết quả ôn luyện mới nhất</h1>
+            <div class="practice-list">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="practice-history">
+                            <h3>LUYỆN KĨ NĂNG ĐỌC HIỂU</h3>
+                            <div class="practice-tag">
+                                <p>#Đọc hiểu</p>
+                                <p>#Điền từ</p>
+                                <p>#Viết lại câu</p>
+                            </div>
+                            <div class="practice-info">Ngày làm bài: 7/1/2025</div>
+                            <div class="practice-info">Thời gian làm bài: 0:55:58</div>
+                            <div class="practice-info">Kết quả: 25/50</div>
+                            <a href="">[Xem chi tiết]</a>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="practice-history">
+                            <h3>LUYỆN KĨ NĂNG ĐỌC HIỂU</h3>
+                            <div class="practice-tag">
+                                <p>#Đọc hiểu</p>
+                                <p>#Điền từ</p>
+                                <p>#Viết lại câu</p>
+                            </div>
+                            <div class="practice-info">Ngày làm bài: 7/1/2025</div>
+                            <div class="practice-info">Thời gian làm bài: 0:55:58</div>
+                            <div class="practice-info">Kết quả: 25/50</div>
+                            <a href="">[Xem chi tiết]</a>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="practice-history">
+                            <h3>LUYỆN KĨ NĂNG ĐỌC HIỂU</h3>
+                            <div class="practice-tag">
+                                <p>#Đọc hiểu</p>
+                                <p>#Điền từ</p>
+                                <p>#Viết lại câu</p>
+                            </div>
+                            <div class="practice-info">Ngày làm bài: 7/1/2025</div>
+                            <div class="practice-info">Thời gian làm bài: 0:55:58</div>
+                            <div class="practice-info">Kết quả: 25/50</div>
+                            <a href="">[Xem chi tiết]</a>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="practice-history">
+                            <h3>LUYỆN KĨ NĂNG ĐỌC HIỂU</h3>
+                            <div class="practice-tag">
+                                <p>#Đọc hiểu</p>
+                                <p>#Điền từ</p>
+                                <p>#Viết lại câu</p>
+                            </div>
+                            <div class="practice-info">Ngày làm bài: 7/1/2025</div>
+                            <div class="practice-info">Thời gian làm bài: 0:55:58</div>
+                            <div class="practice-info">Kết quả: 25/50</div>
+                            <a href="">[Xem chi tiết]</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-1">
+        <div class="container-fluid">
+            <div class="container">
+                <h1>Danh sách lớp</h1>
+                <ul>
+                    <li>Lớp 6</li>
+                    <li>Lớp 7</li>
+                    <li>Lớp 8</li>
+                    <li>Lớp 9</li>
+                    <li>Lớp 10</li>
+                    <li>Lớp 11</li>
+                    <li>Lớp 12</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section-2">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="inner-menu">
+                    <ul>
+                        <li class="m1 active" data-target="schedule">Lịch học</li>
+                        <li data-target="practice-wrap">Đề thi</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="schedule tab-content active">
+                <div class="date-picker">
+                    <div class="route"></div>
+                    <div class="date-info">
+                        <div class="date-item">
+                            <div class="date">31/07</div>
+                            <div class="day">Thứ hai</div>
+                        </div>
+                        <div class="study-list">
+                            <div class="study-item">
+                                <div class="study-info">Lớp 6A</div>
+                                <div class="study-info">Ca 1 (18h30 - 19h30)</div>
+                                <div class="link">THAM GIA LỚP (ZOOM)</div>
+                            </div>
+                            <div class="study-item">
+                                <div class="study-info">Lớp 6B</div>
+                                <div class="study-info">Ca 2 (19h30 - 20h30)</div>
+                                <div class="link">THAM GIA LỚP (ZOOM)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="date-info">
+                        <div class="date-item">
+                            <div class="date">01/08</div>
+                            <div class="day">Thứ ba</div>
+                        </div>
+                        <div class="study-list">
+                            <div class="study-item">
+                                <div class="study-info">Lớp 8A</div>
+                                <div class="study-info">Ca 1 (18h30 - 19h30)</div>
+                                <div class="link">THAM GIA LỚP (ZOOM)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="date-info">
+                        <div class="date-item">
+                            <div class="date">02/08</div>
+                            <div class="day">Thứ tư</div>
+                        </div>
+                    </div>
+
+                    <div class="date-info">
+                        <div class="date-item">
+                            <div class="date">03/08</div>
+                            <div class="day">Thứ năm</div>
+                        </div>
+                    </div>
+
+                    <div class="date-info">
+                        <div class="date-item">
+                            <div class="date">04/08</div>
+                            <div class="day">Thứ sáu</div>
+                        </div>
+                    </div>
+
+                    <div class="date-info">
+                        <div class="date-item">
+                            <div class="date">05/08</div>
+                            <div class="day">Thứ bảy</div>
+                        </div>
+                        <div class="study-list">
+                            <div class="study-item">
+                                <div class="study-info">Lớp 7B</div>
+                                <div class="study-info">Ca 1 (18h30 - 19h30)</div>
+                                <div class="link">THAM GIA LỚP (ZOOM)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="date-info">
+                        <div class="date-item">
+                            <div class="date">06/08</div>
+                            <div class="day">Chủ nhật</div>
+                        </div>
+                    </div>
+                    <div class="route"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container practice-wrap tab-content">
+            <form id="form">
+                <input class="practice-search"
+                    placeholder="Nhập từ khóa bạn muốn tìm kiếm: tên bài tập, dạng câu hỏi,..."></input>
+                <div class="button-search"></div>
+                <div class="practice-checkbox">
+                    <label><input type="checkbox" name="skills" value="Listening"> Tất cả</label>
+                    <label><input type="checkbox" name="skills" value="Reading"> Reading</label>
+                    <label><input type="checkbox" name="skills" value="Writing"> Writing</label>
+                    <label><input type="checkbox" name="skills" value="Speaking"> Speaking</label>
+                    <label><input type="checkbox" name="skills" value="Listening"> Phát âm</label>
+                    <label><input type="checkbox" name="skills" value="Reading"> Điền từ</label>
+                    <label><input type="checkbox" name="skills" value="Writing"> Đọc hiểu</label>
+                    <label><input type="checkbox" name="skills" value="Speaking"> Trọng âm</label>
+                    <label><input type="checkbox" name="skills" value="Listening"> Phát âm</label>
+                    <label><input type="checkbox" name="skills" value="Reading"> Điền từ</label>
+                    <label><input type="checkbox" name="skills" value="Writing"> Câu điều kiện</label>
+                    <label><input type="checkbox" name="skills" value="Speaking"> Thì</label>
+                    <label><input type="checkbox" name="skills" value="Listening"> Phát âm</label>
+                    <label><input type="checkbox" name="skills" value="Reading"> Điền từ</label>
+                    <label><input type="checkbox" name="skills" value="Writing"> Đọc hiểu</label>
+                    <label><input type="checkbox" name="skills" value="Speaking"> Chia động từ</label>
+                </div>
+                <button type="button" onclick="submitSkills()">Tìm kiếm</button>
+            </form>
+            <div class="practice-list">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="practice-item">
+                            <h3>LUYỆN KĨ NĂNG ĐỌC HIỂU</h3>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-users"></i>
+                                <p>Lớp 6</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-clock"></i>
+                                <p>40 phút</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <p>50 câu hỏi</p>
+                            </div>
+                            <div class="practice-tag">
+                                <p>#Đọc hiểu</p>
+                                <p>#Điền từ</p>
+                                <p>#Viết lại câu</p>
+                            </div>
+                            <div class="practice-status">
+                                Đã làm
+                            </div>
+                            <div class="button button-detail" onclick="handleClikc1()">Xem kết quả</div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="practice-item">
+                            <h3>LUYỆN KĨ NĂNG ĐỌC HIỂU</h3>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-users"></i>
+                                <p>Lớp 6</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-clock"></i>
+                                <p>40 phút</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <p>50 câu hỏi</p>
+                            </div>
+                            <div class="practice-tag">
+                                <p>#Đọc hiểu</p>
+                                <p>#Điền từ</p>
+                                <p>#Viết lại câu</p>
+                            </div>
+                            <div class="practice-status ps-1">
+                                Chưa làm
+                            </div>
+                            <div class="button button-detail" onclick="handleClikc2()">Xem chi tiết</div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="practice-item">
+                            <h3>LUYỆN KĨ NĂNG ĐỌC HIỂU</h3>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-users"></i>
+                                <p>Lớp 6</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-clock"></i>
+                                <p>40 phút</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <p>50 câu hỏi</p>
+                            </div>
+                            <div class="practice-tag">
+                                <p>#Đọc hiểu</p>
+                                <p>#Điền từ</p>
+                                <p>#Viết lại câu</p>
+                            </div>
+                            <div class="practice-status ps-1">
+                                Chưa làm
+                            </div>
+                            <div class="button button-detail">Xem chi tiết</div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="practice-item">
+                            <h3>LUYỆN KĨ NĂNG ĐỌC HIỂU</h3>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-users"></i>
+                                <p>Lớp 6</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-clock"></i>
+                                <p>40 phút</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <p>50 câu hỏi</p>
+                            </div>
+                            <div class="practice-tag">
+                                <p>#Đọc hiểu</p>
+                                <p>#Điền từ</p>
+                                <p>#Viết lại câu</p>
+                            </div>
+                            <div class="practice-status ps-1">
+                                Chưa làm
+                            </div>
+                            <div class="button button-detail">Xem chi tiết</div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="practice-item">
+                            <h3>LUYỆN KĨ NĂNG ĐỌC HIỂU</h3>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-users"></i>
+                                <p>Lớp 6</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-clock"></i>
+                                <p>40 phút</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <p>50 câu hỏi</p>
+                            </div>
+                            <div class="practice-tag">
+                                <p>#Đọc hiểu</p>
+                                <p>#Điền từ</p>
+                                <p>#Viết lại câu</p>
+                            </div>
+                            <div class="practice-status ps-1">
+                                Chưa làm
+                            </div>
+                            <div class="button button-detail">Xem chi tiết</div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="practice-item">
+                            <h3>LUYỆN KĨ NĂNG ĐỌC HIỂU</h3>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-users"></i>
+                                <p>Lớp 6</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-clock"></i>
+                                <p>40 phút</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <p>50 câu hỏi</p>
+                            </div>
+                            <div class="practice-tag">
+                                <p>#Đọc hiểu</p>
+                                <p>#Điền từ</p>
+                                <p>#Viết lại câu</p>
+                            </div>
+                            <div class="practice-status ps-1">
+                                Chưa làm
+                            </div>
+                            <div class="button button-detail">Xem chi tiết</div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="practice-item">
+                            <h3>LUYỆN KĨ NĂNG ĐỌC HIỂU</h3>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-users"></i>
+                                <p>Lớp 6</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-clock"></i>
+                                <p>40 phút</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <p>50 câu hỏi</p>
+                            </div>
+                            <div class="practice-tag">
+                                <p>#Đọc hiểu</p>
+                                <p>#Điền từ</p>
+                                <p>#Viết lại câu</p>
+                            </div>
+                            <div class="practice-status ps-1">
+                                Chưa làm
+                            </div>
+                            <div class="button button-detail">Xem chi tiết</div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="practice-item">
+                            <h3>LUYỆN KĨ NĂNG ĐỌC HIỂU</h3>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-users"></i>
+                                <p>Lớp 6</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-clock"></i>
+                                <p>40 phút</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <p>50 câu hỏi</p>
+                            </div>
+                            <div class="practice-tag">
+                                <p>#Đọc hiểu</p>
+                                <p>#Điền từ</p>
+                                <p>#Viết lại câu</p>
+                            </div>
+                            <div class="practice-status ps-1">
+                                Chưa làm
+                            </div>
+                            <div class="button button-detail">Xem chi tiết</div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="practice-item">
+                            <h3>LUYỆN KĨ NĂNG ĐỌC HIỂU</h3>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-users"></i>
+                                <p>Lớp 6</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-clock"></i>
+                                <p>40 phút</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <p>50 câu hỏi</p>
+                            </div>
+                            <div class="practice-tag">
+                                <p>#Đọc hiểu</p>
+                                <p>#Điền từ</p>
+                                <p>#Viết lại câu</p>
+                            </div>
+                            <div class="practice-status ps-1">
+                                Chưa làm
+                            </div>
+                            <div class="button button-detail">Xem chi tiết</div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="practice-item">
+                            <h3>LUYỆN KĨ NĂNG ĐỌC HIỂU</h3>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-users"></i>
+                                <p>Lớp 6</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-clock"></i>
+                                <p>40 phút</p>
+                            </div>
+                            <div class="inner-icon">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <p>50 câu hỏi</p>
+                            </div>
+                            <div class="practice-tag">
+                                <p>#Đọc hiểu</p>
+                                <p>#Điền từ</p>
+                                <p>#Viết lại câu</p>
+                            </div>
+                            <div class="practice-status ps-1">
+                                Chưa làm
+                            </div>
+                            <div class="button button-detail">Xem chi tiết</div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
     <div id="footer"></div>
-    
-   
 
 
+    <script>
+        const menuItems = document.querySelectorAll('.inner-menu li');
+        const contents = document.querySelectorAll('.tab-content');
 
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove active từ các tab
+                menuItems.forEach(i => i.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                // Thêm active cho tab được chọn
+                item.classList.add('active');
+                const targetClass = item.getAttribute('data-target');
+                document.querySelector('.' + targetClass).classList.add('active');
+            });
+        });
+
+        const handleClikc1 = () => {
+            window.location.href = `score.html`;
+        }
+
+        const handleClikc2 = () => {
+            window.location.href = `practiceDetail.html`;
+        }
+    </script>
+
+
+    <!-- <div id="footer"></div> -->
 
 
 
@@ -50,6 +802,7 @@
 
     <!-- Jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
 
 </body>
 

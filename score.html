@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BingeBox Cinema</title>
+    <link rel="icon" type="image/png" href="/assets/images/bingebox_logo.png">
+
+    <!-- Nhúng font và icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Nhúng css -->
+    <style>
+        .section-0 {
+            padding-top: 200px;
+        }
+
+        body {
+            background: linear-gradient(135deg, #5c6ff4, #e870c2) !important;
+        }
+
+        .score {
+            display: flex;
+            gap: 10px
+        }
+
+        .overview {
+            width: 33%;
+            border-radius: 10px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+
+        
+        .your-score {
+            width: 67%;
+            border-radius: 10px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            margin-bottom: 20px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .score h3 {
+            font-size: 50px;
+            font-weight: 600;
+            color: red;
+        }
+
+        .score p {
+            font-size: 25px;
+        }
+
+        .overview p{
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+
+        .score-detail {
+            display: flex;
+            gap: 10px;
+        }
+
+        .score-detail .sta {
+            width: 100%;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            margin-bottom: 20px;
+            background-color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sta h3,
+        .sta h2 {
+            font-size: 30px;
+        }
+
+        .sta i {
+            font-size: 30px;
+        }
+
+        .sta p {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .sta.right h2,
+        .sta.right i {
+            color: #6BB175;
+        }
+
+        .sta.wrong h2,
+        .sta.wrong i {
+            color: #C9494B;
+        }
+
+        .sta.non h2,
+        .sta.non i {
+            color: rgba(128, 128, 128, 0.86);
+        }
+
+        .key {
+            border-radius: 10px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+
+        .key h2 {
+            text-align: center;
+        }
+
+        .key h3 {
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+
+        .key-item {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            font-size: 20px;
+            margin: 20px;
+            font-weight: 500;
+        }
+
+        .key-item p {
+            margin: 0;
+            background-color: #e870c2;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            padding: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .key-item .right {
+            color: #6BB175;
+            font-size: 22px;
+        }
+
+        .key-item .wrong {
+            color: #C9494B;
+            font-size: 22px;
+        }
+
+        .old-answer {
+            font-style: italic;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="section-0">
+
+    </div>
+
+    <div class="section-1">
+        <div class="container">
+            <div class="score">
+                <div class="overview">
+                    <p>Thời gian hoàn thành: 00:55:58</p>
+                    <p>Tỉ lệ trả lời đúng: 90.5%</p>
+                    <p>Cô khen!</p>
+                </div>
+                <div class="your-score">
+                    <h3>9.5/10</h3>
+                    <p>Điểm</p>
+                </div>
+            </div>
+            <div class="score-detail">
+                <div class="sta right">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <h2>Số câu đúng</h2>
+                    <h3>21</h3>
+                    <p>câu hỏi</p>
+                </div>
+                <div class="sta wrong">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <h2>Số câu sai</h2>
+                    <h3>29</h3>
+                    <p>câu hỏi</p>
+                </div>
+                <div class="sta non">
+                    <i class="fa-solid fa-ban"></i>
+                    <h2>Bỏ qua</h2>
+                    <h3>0</h3>
+                    <p>câu hỏi</p>
+                </div>
+            </div>
+            <div class="key">
+                <h2>Đáp án</h2>
+                <h3>Trắc nghiệm</h3>
+                <div class="key-list">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="key-item">
+                                <p class="number">1</p>
+                                <div class="new-key">A:</div>
+                                <div class="old-answer">A</div>
+                                <i class="fa-solid fa-check right"></i>
+                            </div>
+                            <div class="key-item">
+                                <p class="number">2</p>
+                                <div class="new-key">A:</div>
+                                <div class="old-answer"><del>B</del></div>
+                                <i class="fa-solid fa-xmark wrong"></i>
+                            </div>
+                            <div class="key-item">
+                                <p class="number">3</p>
+                                <div class="new-key">C:</div>
+                                <div class="old-answer"><del>B</del></div>
+                                <i class="fa-solid fa-xmark wrong"></i>
+                            </div>
+                            <div class="key-item">
+                                <p class="number">4</p>
+                                <div class="new-key">D:</div>
+                                <div class="old-answer"><del>B</del></div>
+                                <i class="fa-solid fa-xmark wrong"></i>
+                            </div>
+                            <div class="key-item">
+                                <p class="number">5</p>
+                                <div class="new-key">A:</div>
+                                <div class="old-answer"><del>B</del></div>
+                                <i class="fa-solid fa-xmark wrong"></i>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="key-item">
+                                <p class="number">6</p>
+                                <div class="new-key">A:</div>
+                                <div class="old-answer">A</div>
+                                <i class="fa-solid fa-check right"></i>
+                            </div>
+                            <div class="key-item">
+                                <p class="number">7</p>
+                                <div class="new-key">B:</div>
+                                <div class="old-answer">B</div>
+                                <i class="fa-solid fa-check right"></i>
+                            </div>
+                            <div class="key-item">
+                                <p class="number">8</p>
+                                <div class="new-key">C:</div>
+                                <div class="old-answer"><del>B</del></div>
+                                <i class="fa-solid fa-xmark wrong"></i>
+                            </div>
+                            <div class="key-item">
+                                <p class="number">9</p>
+                                <div class="new-key">D:</div>
+                                <div class="old-answer"><del>A</del></div>
+                                <i class="fa-solid fa-xmark wrong"></i>
+                            </div>
+                            <div class="key-item">
+                                <p class="number">10</p>
+                                <div class="new-key">C:</div>
+                                <div class="old-answer"><del>D</del></div>
+                                <i class="fa-solid fa-xmark wrong"></i>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="key-item">
+                                <p class="number">11</p>
+                                <div class="new-key">A:</div>
+                                <div class="old-answer">A</div>
+                                <i class="fa-solid fa-check right"></i>
+                            </div>
+                            <div class="key-item">
+                                <p class="number">12</p>
+                                <div class="new-key">A:</div>
+                                <div class="old-answer"><del>B</del></div>
+                                <i class="fa-solid fa-xmark wrong"></i>
+                            </div>
+                            <div class="key-item">
+                                <p class="number">13</p>
+                                <div class="new-key">C:</div>
+                                <div class="old-answer"><del>B</del></div>
+                                <i class="fa-solid fa-xmark wrong"></i>
+                            </div>
+                            <div class="key-item">
+                                <p class="number">14</p>
+                                <div class="new-key">D:</div>
+                                <div class="old-answer"><del>B</del></div>
+                                <i class="fa-solid fa-xmark wrong"></i>
+                            </div>
+                            <div class="key-item">
+                                <p class="number">15</p>
+                                <div class="new-key">A:</div>
+                                <div class="old-answer"><del>B</del></div>
+                                <i class="fa-solid fa-xmark wrong"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>Điền đáp án</h3>
+                <div class="key-item">
+                    <p class="number">16</p>
+                    <div class="new-key">That shoud be me</div>
+                    <div class="old-answer">That should be me</div>
+                    <i class="fa-solid fa-check right"></i>
+                </div>
+                <div class="key-item">
+                    <p class="number">17</p>
+                    <div class="new-key">This is the way</div>
+                    <div class="old-answer"><del>That is the way</del></div>
+                    <i class="fa-solid fa-xmark wrong"></i>
+                </div>
+                <div class="key-item">
+                    <p class="number">18</p>
+                    <div class="new-key">emotion</div>
+                    <div class="old-answer"><del>emotional</del></div>
+                    <i class="fa-solid fa-xmark wrong"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- <div id="footer"></div> -->
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
