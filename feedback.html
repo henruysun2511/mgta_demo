@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BingeBox Cinema</title>
+    <link rel="icon" type="image/png" href="/assets/images/bingebox_logo.png">
+
+    <!-- Nhúng font và icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Nhúng css -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #5c6ff4, #e870c2) !important;
+        }
+
+        .section-0 {
+            padding-top: 200px;
+        }
+
+        .feedback-section {
+            padding: 80px 0;
+            text-align: center;
+
+        }
+
+        .feedback-title {
+            font-size: 40px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .feedback-subtitle {
+            font-size: 18px;
+            color: rgb(217, 207, 207);
+            margin-bottom: 40px;
+        }
+
+        .feedback-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .feedback-item {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.09);
+            max-width: 300px;
+            text-align: left;
+        }
+
+        .feedback-avatar img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .feedback-content h4 {
+            font-size: 18px;
+            color: #e88ec6;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .stars {
+            color: #f6c964;
+            margin-bottom: 10px;
+        }
+
+        .feedback-content p {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        .intro-section {
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .intro-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .intro-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .intro-image {
+            flex: 1;
+            min-width: 280px;
+            width: 100px;
+        }
+
+        .intro-image img {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .intro-text h3 {
+            font-size: 30px;
+            color: #f6c964;
+            margin-bottom: 12px;
+        }
+
+        .intro-text p {
+            font-size: 16px;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .inner-title {
+            text-align: center;
+            font-size: 55px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .inner-subtitle {
+            text-align: center;
+            font-size: 23px;
+            color: #f6c964;
+            margin-bottom: 20px;
+        }
+
+        .line {
+            width: 150px;
+            height: 5px;
+            background-color: #e88ec6;
+            margin: 0 auto;
+            margin-bottom: 80px;
+        }
+
+        .intro-section-2, .feedback-section{
+            margin: 100px 0;
+        }
+
+        .image-list{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .image-list img{
+            width: 300px;
+            height: 300px;
+        }
+
+
+        .search {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .search input {
+            width: 100%;
+            padding: 12px 40px 12px 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s ease;
+            max-width: 600px;
+        }
+
+        .search input:focus {
+            border-color: #5c6ff4;
+            box-shadow: 0 0 5px rgba(92, 111, 244, 0.5);
+        }
+
+        .search i {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 18px;
+            pointer-events: none;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="section-0"></div>
+
+    <div class="intro-section">
+        <div class="container">
+            <div class="intro-row">
+                <div class="intro-image">
+                    <img src="assets/images/feedback1.webp" alt="Intro 1">
+                </div>
+                <div class="intro-text">
+                    <h3>Học lại từ đầu – Không còn là nỗi sợ</h3>
+                    <p>Lớp học được thiết kế riêng cho học sinh mất gốc, từng bước củng cố lại kiến thức nền tảng.</p>
+                </div>
+            </div>
+
+            <div class="intro-row reverse">
+                <div class="intro-image">
+                    <img src="assets/images/feedback2.webp" alt="Intro 2">
+                </div>
+                <div class="intro-text">
+                    <h3>Giảng viên tận tâm, đồng hành cùng bạn</h3>
+                    <p>Cô Trà luôn sẵn sàng hỗ trợ học viên từng bài tập, từng câu hỏi khó.</p>
+                </div>
+            </div>
+
+            <div class="intro-row">
+                <div class="intro-image">
+                    <img src="assets/images/feedback3.webp" alt="Intro 3">
+                </div>
+                <div class="intro-text">
+                    <h3>Lớp học online nhưng tương tác như offline</h3>
+                    <p>Không khí học vui vẻ, học sinh được giao bài cá nhân hóa theo trình độ.</p>
+                </div>
+            </div>
+
+            <div class="intro-row reverse">
+                <div class="intro-image">
+                    <img src="assets/images/feedback4.webp" alt="Intro 4">
+                </div>
+                <div class="intro-text">
+                    <h3>Hàng trăm học sinh đã thay đổi kết quả</h3>
+                    <p>Đạt điểm 7, 8, thậm chí 9+ sau khóa học tiếng Anh mất gốc.</p>
+                </div>
+            </div>
+
+            <div class="intro-row">
+                <div class="intro-image">
+                    <img src="assets/images/feedback5.webp" alt="Intro 3">
+                </div>
+                <div class="intro-text">
+                    <h3>Lớp học online nhưng tương tác như offline</h3>
+                    <p>Không khí học vui vẻ, học sinh được giao bài cá nhân hóa theo trình độ.</p>
+                </div>
+            </div>
+
+            <div class="intro-row reverse">
+                <div class="intro-image">
+                    <img src="assets/images/feedback6.webp" alt="Intro 4">
+                </div>
+                <div class="intro-text">
+                    <h3>Hàng trăm học sinh đã thay đổi kết quả</h3>
+                    <p>Đạt điểm 7, 8, thậm chí 9+ sau khóa học tiếng Anh mất gốc.</p>
+                </div>
+            </div>
+
+            <div class="intro-row">
+                <div class="intro-image">
+                    <img src="assets/images/feedback7.webp" alt="Intro 3">
+                </div>
+                <div class="intro-text">
+                    <h3>Lớp học online nhưng tương tác như offline</h3>
+                    <p>Không khí học vui vẻ, học sinh được giao bài cá nhân hóa theo trình độ.</p>
+                </div>
+            </div>
+
+            <div class="intro-row reverse">
+                <div class="intro-image">
+                    <img src="assets/images/feedback8.webp" alt="Intro 4">
+                </div>
+                <div class="intro-text">
+                    <h3>Hàng trăm học sinh đã thay đổi kết quả</h3>
+                    <p>Đạt điểm 7, 8, thậm chí 9+ sau khóa học tiếng Anh mất gốc.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="intro-section-2">
+        <h2 class="inner-title">Cùng vô vàn những feedback tích cực khác!</h2>
+        <h3 class="inner-subtitle">Lớp học Tiếng Anh ONLINE mất gốc cho học sinh cấp 2</h3>
+        <div class="line"></div>
+        <div class="image-list">
+            <img src="assets/images/feedback9.webp" alt="">
+            <img src="assets/images/feedback10.webp" alt="">
+            <img src="assets/images/feedback11.webp" alt="">
+            <img src="assets/images/feedback12.webp" alt="">
+            <img src="assets/images/feedback13.webp" alt="">
+            <img src="assets/images/feedback14.webp" alt="">
+            <img src="assets/images/feedback15.webp" alt="">
+            <img src="assets/images/feedback16.webp" alt="">
+        </div>
+    </div>
+
+    <div class="feedback-section">
+        <div class="container-fluid">
+            <h2 class="inner-title">Feedback từ học viên</h2>
+            <h3 class="inner-subtitle">Lắng nghe chia sẻ thực tế từ những học sinh đã tham gia lớp học</h3>
+            <div class="search">
+                <input type="text" placeholder="Để lại feeback cho cô Trà nè!">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="feedback-list">
+                <div class="feedback-item">
+                    <div class="feedback-avatar">
+                        <img src="https://foto.sondakika.com/haber/2025/06/25/anlasma-saglandi-cristiano-ronaldo-imzayi-atiyor-18788528_2797_amp.jpg"
+                            alt="avatar">
+                    </div>
+                    <div class="feedback-content">
+                        <h4>Minh Anh – Lớp 7</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>Trước khi học em không biết bắt đầu từ đâu, nhưng sau khoá học với cô Trà em đã tự tin hơn
+                            rất nhiều. Bài giảng dễ hiểu và rất tận tâm ạ!</p>
+                    </div>
+                </div>
+
+                <div class="feedback-item">
+                    <div class="feedback-avatar">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png"
+                            alt="avatar">
+                    </div>
+                    <div class="feedback-content">
+                        <h4>Quốc Khánh – Lớp 9</h4>
+                        <div class="stars">⭐⭐⭐⭐</div>
+                        <p>Em thích nhất là cô chữa bài kỹ và luôn khuyến khích học sinh hỏi lại nếu chưa hiểu. Sau khóa
+                            học em lên được 7.5 điểm tiếng Anh!</p>
+                    </div>
+                </div>
+
+                <div class="feedback-item">
+                    <div class="feedback-avatar">
+                        <img src="https://i.pinimg.com/originals/b0/d8/3c/b0d83cfc1162fa4aa7f036bf50caefdc.jpg"
+                            alt="avatar">
+                    </div>
+                    <div class="feedback-content">
+                        <h4>Lan Hương – Lớp 8</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>Em từng mất gốc tiếng Anh, giờ thì đã nắm chắc ngữ pháp và biết cách học từ vựng hiệu quả.
+                            Cảm ơn cô rất nhiều!</p>
+                    </div>
+                </div>
+                <div class="feedback-item">
+                    <div class="feedback-avatar">
+                        <img src="https://foto.sondakika.com/haber/2025/06/25/anlasma-saglandi-cristiano-ronaldo-imzayi-atiyor-18788528_2797_amp.jpg"
+                            alt="avatar">
+                    </div>
+                    <div class="feedback-content">
+                        <h4>Minh Anh – Lớp 7</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>Trước khi học em không biết bắt đầu từ đâu, nhưng sau khoá học với cô Trà em đã tự tin hơn
+                            rất nhiều. Bài giảng dễ hiểu và rất tận tâm ạ!</p>
+                    </div>
+                </div>
+                <div class="feedback-item">
+                    <div class="feedback-avatar">
+                        <img src="https://i.pinimg.com/originals/b0/d8/3c/b0d83cfc1162fa4aa7f036bf50caefdc.jpg"
+                            alt="avatar">
+                    </div>
+                    <div class="feedback-content">
+                        <h4>Lan Hương – Lớp 8</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>Em từng mất gốc tiếng Anh, giờ thì đã nắm chắc ngữ pháp và biết cách học từ vựng hiệu quả.
+                            Cảm ơn cô rất nhiều!</p>
+                    </div>
+                </div>
+                <div class="feedback-item">
+                    <div class="feedback-avatar">
+                        <img src="https://foto.sondakika.com/haber/2025/06/25/anlasma-saglandi-cristiano-ronaldo-imzayi-atiyor-18788528_2797_amp.jpg"
+                            alt="avatar">
+                    </div>
+                    <div class="feedback-content">
+                        <h4>Minh Anh – Lớp 7</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>Trước khi học em không biết bắt đầu từ đâu, nhưng sau khoá học với cô Trà em đã tự tin hơn
+                            rất nhiều. Bài giảng dễ hiểu và rất tận tâm ạ!</p>
+                    </div>
+                </div>
+                <div class="feedback-item">
+                    <div class="feedback-avatar">
+                        <img src="https://i.pinimg.com/originals/b0/d8/3c/b0d83cfc1162fa4aa7f036bf50caefdc.jpg"
+                            alt="avatar">
+                    </div>
+                    <div class="feedback-content">
+                        <h4>Lan Hương – Lớp 8</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>Em từng mất gốc tiếng Anh, giờ thì đã nắm chắc ngữ pháp và biết cách học từ vựng hiệu quả.
+                            Cảm ơn cô rất nhiều!</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
