@@ -85,7 +85,8 @@
 
 .section-5 {
     padding: 50px 200px;
-    margin: 80px 0;
+    margin: 150px 0;
+    background-color: #F4F0F5 !important;
 }
 
 .profile-wrap {
@@ -216,23 +217,24 @@ strong {
 }
 
 .step-box {
-    position: relative; 
+    position: relative;
     text-align: center;
     background-color: white;
     width: 200px;
-    height: 250px;
+    height: 300px;
     padding: 20px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     z-index: 1;
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.step-box:hover{
-     transform: translateY(-4px);
+.step-box:hover {
+    transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
+
 .step-box::before {
     content: '';
     position: absolute;
@@ -259,10 +261,12 @@ strong {
     font-size: 27px;
     margin-bottom: 10px;
 }
-.inner-button{
+
+.inner-button {
     display: flex;
     justify-content: center;
 }
+
 .step-box .step-content {
     font-size: 17px;
 }

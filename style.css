@@ -1,8 +1,12 @@
+/* body{
+       background-color: #F4F0F5 !important;
+} */
 .section-1 {
     background: linear-gradient(135deg, #5c6ff4, #e870c2);
     height: 100vh;
     overflow: hidden;
     z-index: 1;
+       
 }
 
 /* 

@@ -1,0 +1,172 @@
+.section-6 {
+    margin: 150px 0 200px 0;
+
+}
+
+.section-6 .inner-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 150px;
+}
+
+
+.section-6 .inner-image {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.section-6 .inner-image img {
+    width: auto;
+    height: 500px;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+
+.blob {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 5;
+    width: 500px;
+    height: 500px;
+    background-color: #e88ec6;
+    aspect-ratio: 1;
+    clip-path: shape(from 15.65% 52.24%, curve to 11.39% 47.20% with 15.31% 50.00%, curve to 6.46% 41.23% with 7.47% 44.40%, curve to 14.29% 38.47% with 5.45% 38.06%, curve to 21.01% 35.45% with 23.12% 38.87%, curve to 17.59% 28.09% with 18.89% 32.04%, curve to 15.90% 19.82% with 16.29% 24.13%, curve to 23.99% 21.33% with 15.50% 15.50%, curve to 28.93% 17.27% with 32.47% 27.16%, curve to 30.17% 10.51% with 25.40% 7.38%, curve to 39.07% 19.12% with 34.94% 13.63%, curve to 44.58% 22.00% with 43.20% 24.61%, curve to 47.98% 17.77% with 45.97% 19.39%, curve to 52.63% 13.11% with 50.00% 16.16%, curve to 57.87% 10.48% with 55.26% 10.06%, curve to 61.30% 15.81% with 60.48% 10.90%, curve to 65.38% 19.23% with 62.13% 20.73%, curve to 73.48% 15.41% with 68.63% 17.74%, curve to 79.10% 16.61% with 78.33% 13.08%, curve to 78.37% 24.76% with 79.87% 20.13%, curve to 76.01% 32.43% with 76.86% 29.39%, curve to 74.16% 37.94% with 75.15% 35.48%, curve to 81.28% 39.92% with 73.18% 40.40%, curve to 94.11% 41.51% with 89.39% 39.45%, curve to 90.62% 46.79% with 98.84% 43.57%, curve to 88.41% 52.92% with 82.39% 50.00%, curve to 89.73% 57.62% with 94.42% 55.85%, curve to 81.88% 60.64% with 85.04% 59.39%, curve to 83.43% 66.96% with 78.71% 61.89%, curve to 81.62% 70.64% with 88.15% 72.03%, curve to 71.58% 68.66% with 75.09% 69.26%, curve to 68.90% 71.89% with 68.06% 68.06%, curve to 66.42% 74.20% with 69.74% 75.72%, curve to 62.21% 75.00% with 63.10% 72.68%, curve to 58.85% 75.58% with 61.32% 77.33%, curve to 54.89% 74.83% with 56.39% 73.83%, curve to 51.70% 77.81% with 53.40% 75.83%, curve to 47.58% 83.24% with 50.00% 79.79%, curve to 42.97% 85.57% with 45.17% 86.69%, curve to 38.03% 84.99% with 40.77% 84.45%, curve to 33.40% 83.78% with 35.28% 85.53%, curve to 31.40% 78.21% with 31.51% 82.02%, curve to 30.24% 72.60% with 31.28% 74.39%, curve to 24.12% 72.28% with 29.20% 70.80%, curve to 21.18% 69.58% with 19.05% 73.75%, curve to 17.40% 65.68% with 23.31% 65.41%, curve to 8.88% 63.83% with 11.49% 65.95%, curve to 11.12% 58.10% with 6.26% 61.72%, curve to 15.65% 52.24% with 15.98% 54.48%);
+}
+
+
+.value-box {
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.value-box h3 {
+    font-size: 20px;
+    color: #e88ec6;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.value-box p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+}
+
+
+.curved-list {
+    display: flex;
+    gap: 0;
+    align-items: center;
+}
+
+.curved-rectangle {
+    --c: 85;
+    /* control the curvature (a percentage value without unit bigger than 50%)*/
+
+    height: 150px;
+    width: 150px;
+    aspect-ratio: 2/3;
+    background: #e88ec6;
+    mask: radial-gradient(100% calc(var(--c)*1%) at calc(100% + 100%*cos(asin(50/var(--c)))), #0000 calc(100% - 1px), #000);
+    clip-path: ellipse(100% calc(var(--c)*1%) at right);
+    margin-left: -15px;
+}
+
+/* HTML: <div class="triangle"></div> */
+.triangle {
+    --r: 20px;
+    /* border radius */
+
+    height: 180px;
+    aspect-ratio: cos(30deg);
+    --_g: calc(tan(60deg)*var(--r)) left var(--r), #000 98%, #0000 101%;
+    -webkit-mask:
+        conic-gradient(from 60deg at calc(3*var(--r)/2 - 100%), #000 60deg, #0000 0) 0 0/calc(100% - 3*var(--r)/2) 100% no-repeat,
+        radial-gradient(var(--r) at calc(100% - 2*var(--r)) 50%, #000 98%, #0000 101%),
+        radial-gradient(var(--r) at top var(--_g)),
+        radial-gradient(var(--r) at bottom var(--_g));
+    clip-path: polygon(100% 50%, 0 100%, 0 0);
+    background: linear-gradient(45deg, #FA6900, #C02942);
+}
+
+
+.curved-edge {
+    --c: 70px;
+    /* control the curvature (works with percentage) */
+    width: 150px;
+    height: 150px;
+    aspect-ratio: 2/3;
+    /* you can also update the 60%  */
+    mask: radial-gradient(var(--c) 60% at right, #0000 calc(100% - 1px), #000);
+    background: #40C0CB;
+    margin-right: -45px;
+}
+
+
+.rounded-edge {
+    width: 150px;
+    height: 150px;
+    aspect-ratio: 2/3;
+    /* update the 85% to control the curvature
+     you can also update the 50% to control the position
+  */
+    margin-right: 5px;
+    clip-path: ellipse(100% 85% at 100% 50%);
+    background: #CC2A41;
+}
+
+.section-8{
+   margin-bottom: 50px;
+ 
+}
+
+.section-8 .content{
+    padding: 80px 80px;
+    text-align: center;
+    height:  600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    align-items: center;
+}
+
+
+.section-8 h3{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.section-8 p{
+    color: rgb(128, 128, 128);
+}
+
+.section-8 .content i {
+    font-size: 40px;
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 20px 15px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    color: #fff;
+    transition: transform 0.3s ease;
+}

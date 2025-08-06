@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BingeBox Cinema</title>
+    <link rel="icon" type="image/png" href="/assets/images/bingebox_logo.png">
+
+    <!-- Nhúng font và icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Nhúng css -->
+    <link rel="stylesheet" href="base.css">
+    <style>
+        .section-0 {
+            padding: 100px 0 0 0;
+            background: linear-gradient(135deg, #5c6ff4, #e870c2);
+        }
+
+
+        .section-0 .section-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            z-index: 2;
+        }
+
+        .section-0 .section-content h1 {
+            color: white;
+            font-size: 55px;
+            font-weight: bold;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            margin: 0 0 20px 0;
+        }
+
+        /* .section-0 .inner-image{
+            height: 100%;
+        } */
+
+        .section-1 {
+            /* background: linear-gradient(135deg, #5c6ff4, #e870c2); */
+            background-color: #fbecff;
+            padding: 200px 0 70px 0;
+            margin-top: -80px;
+        }
+
+        .section-1 .inner-wrap {
+            display: flex;
+            padding: 50px 0;
+            align-items: center;
+        }
+
+        .section-1 .inner-image {
+            width: 600px;
+            height: 800px;
+            position: relative;
+        }
+
+        .section-1 .inner-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            /* lớp phủ mờ màu đen */
+            z-index: 1;
+            border-radius: 15px;
+        }
+
+        .section-1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+            border-radius: 15px;
+
+        }
+
+        .section-1 .inner-info {
+            padding: 40px;
+            background-color: #e88ec6;
+            text-align: center;
+            height: 300px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        .section-1 .inner-info h3 {
+            font-size: 18px;
+        }
+
+        .section-1 .inner-info h1 {
+            font-size: 30px;
+            font-weight: 800;
+            padding: 20px 0;
+        }
+
+        .section-1 .inner-info-2 {
+            padding: 40px;
+            font-size: 25px;
+            background-color: #f6c964;
+            text-align: center;
+            width: 250px;
+            height: 250px;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .section-1 .quote {
+            text-align: right;
+            position: absolute;
+            bottom: 30px;
+            color: white;
+            font-style: italic;
+            z-index: 99;
+            font-size: 30px;
+            font-weight: 400;
+            padding: 0 40px 20px 0;
+        }
+
+        .inner-content-2 {
+            background-color: #69dfe1;
+            padding: 30px;
+            text-align: right;
+            width: 250px;
+            color: white;
+            font-weight: 500;
+        }
+    </style>
+    <style>
+        .section-2 {
+            background-color: #f6c964;
+            padding: 80px 0 0 0;
+        }
+
+        .section-2 .inner-wrap {
+            display: flex;
+            align-items: center;
+        }
+
+        .section-2 h1 {
+            font-weight: 600;
+            margin-bottom: 60px;
+            color: white;
+            font-size: 60px;
+        }
+
+        .section-2 .inner-image {
+            margin-right: 50px;
+        }
+
+        .flex {
+            display: flex;
+            gap: 20px;
+            font-size: 20px;
+            margin: 15px;
+            align-items: center;
+            border-bottom: 1px solid gray;
+            padding: 15px 0;
+        }
+
+        .section-2 .content {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .number {
+            font-size: 55px;
+            color: gray;
+            font-weight: bold;
+            margin-right: 25px;
+            width: 50px;
+        }
+    </style>
+    <style>
+        .section-4,
+        .section-3 {
+            padding: 250px 0;
+        }
+
+        .my-row {
+            display: flex;
+        }
+
+        .my-col {}
+
+        .my-col .script {
+            padding: 30px;
+            text-align: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 350px;
+        }
+
+        .section-4 .inner-image {
+            height: 300px;
+        }
+
+        .inner-title {
+            text-align: center;
+            font-size: 55px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .inner-subtitle {
+            text-align: center;
+            font-size: 23px;
+            color: gray;
+            margin-bottom: 20px;
+        }
+
+        .line {
+            width: 150px;
+            height: 5px;
+            background-color: #e88ec6;
+            margin: 0 auto;
+            margin-bottom: 80px;
+        }
+
+        .section-3 .box {
+            background-color: #e88ec6;
+            padding: 30px;
+            margin-right: 5px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .box h1 {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .box p {
+            font-weight: 700;
+            font-size: 18px;
+        }
+    </style>
+    <style>
+        .section-5 {}
+
+        .section-5 .inner-wrap {
+            display: flex;
+            gap: 30px;
+            align-items: end;
+        }
+
+        .section-5 .inner-content {
+            width: 45%;
+            padding: 30px;
+        }
+
+        .section-5 .inner-image {
+            width: 500px;
+            height: auto;
+        }
+
+        .section-5 .inner-title-2 {
+            margin-bottom: 18px;
+            padding: 0 0 30px 0;
+            border-bottom: 2px solid #e88ec6;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .section-5 p {
+            text-align: justify;
+            font-size: 16px;
+            padding: 20px 0 0 0;
+            margin: 0;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .profile-section {
+            display: flex;
+            gap: 40px;
+            padding: 40px;
+
+            margin: 0 auto;
+        }
+
+        .profile-box {
+            background: #fff;
+            border-left: 8px solid #e88ec6;
+            padding: 20px 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .section-title.pink {
+            color: #e88ec6;
+        }
+
+        .section-title.mint {
+            color: #69dfe1;
+        }
+
+        .section-6 ul {
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        .section-6 ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-6 ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #f6c964;
+            font-size: 18px;
+        }
+
+        .section-6 {
+            padding: 150px 0;
+        }
+
+        .inner-main {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+
+        .accordion .card {
+            border: none;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .accordion .card-header {
+            background-color: #69dfe1;
+            padding: 0;
+        }
+
+        .accordion .card-header h2 {
+            margin: 0;
+        }
+
+        .accordion .btn-link {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            background-color: #69dfe1;
+            border: none;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion .btn-link:hover {
+            background-color: #5cc9d0;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .accordion .card-body {
+            background-color: #f6c964;
+            padding: 20px;
+            font-size: 16px;
+            color: #444;
+            border-top: 2px solid #f6c964;
+            text-align: left;
+        }
+    </style>
+    <style>
+        .enroll-section {
+            color: #000;
+            padding: 40px 20px;
+            max-width: 600px;
+            margin: 50px 0;
+            border-radius: 20px;
+            text-align: left;
+        }
+
+        .year-label {
+            background-color: #f6c964;
+            color: #000;
+            font-weight: bold;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .checklist li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 15px;
+            font-size: 18px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .checklist li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #ffffff;
+            background-color: #212f45;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="section-0">
+        <div class="section-content container">
+            <div class="enroll-section">
+                <h1>Tuyển sinh lớp Tiếng anh mất gốc
+                    Cho học sinh cấp 2</h1>
+                <div class="year-label">2025–2026</div>
+                <ul class="checklist">
+                    <li>Tuyển sinh các lớp 6, 7, 8, 9</li>
+                    <li>Hình thức học: Online</li>
+                    <li>Chương trình học bám sát theo SGK</li>
+                    <li>Thời gian học: 2 buổi/tuần (1h30)</li>
+                    <li>Cam kết điểm số từ 3,4 điểm tăng lên 6,7+ điểm sau một học kì</li>
+                </ul>
+            </div>
+            <div class="inner-image">
+                <img src="assets/images/bigben.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="section-3">
+        <div class="container">
+            <h2 class="inner-title">Số liệu nổi bật</h2>
+            <h3 class="inner-subtitle">Cô và trò cùng đạt được</h3>
+            <div class="line"></div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="box">
+                        <h1>90%</h1>
+                        <p>Học sinh cải thiện điểm số chỉ sau 2 tháng học</p>
+                    </div>
+
+                </div>
+                <div class="col-3">
+                    <div class="box" style="background-color: #69dfe1;">
+                        <h1>95%</h1>
+                        <p>Học sinh cảm thấy tự tin hơn khi học tiếng Anh</p>
+                    </div>
+
+                </div>
+                <div class="col-3">
+                    <div class="box" style="background-color: #f6c964;">
+                        <h1>9.5</h1>
+                        <p>Là mức độ hài lòng của học viên đối với trung tâm</p>
+                    </div>
+
+                </div>
+                <div class="col-3">
+                    <div class="box">
+                        <h1>500+</h1>
+                        <p>Học sinh đã và đang đồng hành cùng cô Trà</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-2">
+        <div class="container">
+            <div class="inner-wrap">
+                <div class="inner-image">
+                    <img src="assets/images/man2.png" alt="">
+                </div>
+                <div class="inner-content">
+                    <h1>WHY CHOOSE MGTA?</h1>
+                    <div class="flex">
+                        <div class="number">01</div>
+                        <div class="content">Giảng viên tận tâm, thân thiện</div>
+                    </div>
+                    <div class="flex">
+                        <div class="number">02</div>
+                        <div class="content">Phương pháp dễ hiểu, dễ nhớ</div>
+                    </div>
+                    <div class="flex">
+                        <div class="number">03</div>
+                        <div class="content">Lộ trình học rõ ràng, chương trình bám sát BGD</div>
+                    </div>
+                    <div class="flex">
+                        <div class="number">04</div>
+                        <div class="content">Cộng đồng học viên năng động, hỗ trợ nhau</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section-4">
+        <div class="container-fluid">
+            <h3 class="inner-subtitle">5 Giá trị cốt lõi </h3>
+            <h2 class="inner-title">Tạo nên MGTA English</h2>
+            <div class="line"></div>
+            <div class="my-row">
+                <div class="my-col">
+                    <div class="script" style="background-color: #e88ec6;">
+                        <h3>Chủ động</h3>
+                        <p>Chúng tôi khuyến khích học viên không chỉ học thuộc, mà hiểu và áp dụng được. Việc hình thành
+                            tư duy chủ động giúp việc học tiếng Anh trở nên nhẹ nhàng và bền vững hơn.</p>
+                    </div>
+                    <div class="inner-image">
+                        <img src="https://i.pinimg.com/736x/0c/60/5f/0c605f5725146674637fe3342783ecf4.jpg" alt="">
+                    </div>
+                </div>
+                <div class="my-col">
+                    <div class="inner-image">
+                        <img src="https://i.pinimg.com/1200x/8b/cd/63/8bcd634306224cfddfbd6aff6ee22489.jpg" alt="">
+                    </div>
+                    <div class="script" style="background-color: #f6c964;">
+                        <h3>Thấu hiểu</h3>
+                        <p>Từng bài học đều được xây dựng từ trải nghiệm giảng dạy hơn 6 năm với học sinh mất gốc. Chúng
+                            tôi hiểu bạn đang gặp khó ở đâu – và giúp bạn tháo gỡ từ gốc rễ.</p>
+                    </div>
+
+                </div>
+                <div class="my-col">
+                    <div class="script" style="background-color: #69dfe1;">
+                        <h3>Đồng hành</h3>
+                        <p>Học viên không bao giờ phải học một mình. Luôn có trợ giảng hỗ trợ, cộng đồng tích cực, và cô
+                            Trà luôn là người bạn đồng hành trên từng bước tiến bộ.</p>
+                    </div>
+                    <div class="inner-image">
+                        <img src="https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/480874275_968928301876545_1283072753018366055_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Bb5bs2ApgLsQ7kNvwGpL-JJ&_nc_oc=AdmJanLIf2uOFmtffm9H-0C8vgZP8za2QGlmn0vqDD_FJM2a_hZ21xnVngBG5UK2PHuI3s8zkHfiGzrvru2R2KuF&_nc_zt=23&_nc_ht=scontent.fhan14-3.fna&_nc_gid=4cU0fO2_B_FkYzjh3AveVw&oh=00_AfX8h4bDeEaYMciLFFHJ2Gd8n2pZCJyXgfqMKeDPdfV5Dw&oe=689912A4"
+                            alt="">
+                    </div>
+                </div>
+                <div class="my-col" style="background-color: #F4F0F5;">
+                    <div class="inner-image">
+                        <img src="https://i.pinimg.com/736x/00/e1/da/00e1daf312003929d860c3de89f77d43.jpg" alt="">
+                    </div>
+                    <div class="script">
+                        <h3>An tâm</h3>
+                        <p>Lộ trình rõ ràng – bài giảng dễ hiểu – cam kết học tới đâu nắm chắc tới đó. Mục tiêu của
+                            chúng tôi không phải chỉ dạy xong, mà là học viên hiểu và làm được.</p>
+                    </div>
+
+                </div>
+                <div class="my-col" style="background-color: #f6c964;">
+                    <div class="script">
+                        <h3>Tiến bộ thật</h3>
+                        <p>Chúng tôi không hứa hẹn bạn giỏi sau 7 ngày. Nhưng nếu bạn kiên trì, bạn sẽ thấy rõ sự thay
+                            đổi từng tuần – từ việc nghe hiểu nhiều hơn, nói trôi hơn, đến lúc không còn sợ tiếng Anh
+                            nữa.</p>
+                    </div>
+                    <div class="inner-image">
+                        <img src="https://i.pinimg.com/1200x/c7/0d/12/c70d12ec23b1b03e4d5d49c3cc368d8c.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-5">
+        <div class="container">
+            <h1 class="inner-title">CÔ TRÀ LÀ AI?</h1>
+            <div class="line"></div>
+            <div class="inner-wrap">
+                <div class="inner-content">
+                    <h1 class="inner-title-2">Khơi lại đam mê tiếng Anh từ những điều cơ bản nhất</h1>
+                    <p>Nhiều học sinh cấp 2 dù học tiếng Anh từ sớm nhưng vẫn cảm thấy mất gốc, chán nản, không hiểu
+                        bài, sợ kiểm tra. Điều này ảnh hưởng trực tiếp đến kết quả học tập và sự tự tin của các em.
+                        MGTA được xây dựng dành riêng cho học sinh mất gốc, giúp các em học lại từ đầu một cách dễ hiểu,
+                        có lộ trình rõ ràng, giáo viên gần gũi và phương pháp dễ nhớ.
+                        Không chỉ giúp các em nắm lại kiến thức nền tảng, MGTA còn tạo động lực và niềm vui trong việc
+                        học tiếng Anh – để việc học không còn là áp lực, mà là hành trình khám phá đầy hứng thú.</p>
+                </div>
+                <div class="inner-image">
+                    <img src="assets/images/gv.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-1">
+        <div class="container">
+
+            <div class="inner-wrap">
+                <div class="inner-content-2">
+                    <p>6 năm kinh nghiêm chuyên dạy cho học sinh mất gốc</p>
+                </div>
+                <div class="inner-image">
+                    <img src="https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/475278124_9175764269158141_1517181284836107117_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=wKLlNeHmVWAQ7kNvwGUBZs8&_nc_oc=AdlqA4uQShhNfMYTvcv_F3nMK3Ww3_eVLyneO9b5qAmq6dNTFBS6qY705-tuS7qw-k82O6_Fhs4VHe5ul7uxjesY&_nc_zt=23&_nc_ht=scontent.fhan14-4.fna&_nc_gid=fTApwK8t39a44Bb7WLXDVg&oh=00_AfWlwmornXooOKXKcXIW2VtxPe2QQp0BHIkNUbKhuYwYrw&oe=68990CB1"
+                        alt="">
+                    <div class="quote">
+                        "Tiếng Anh không khó, chỉ cần bắt đầu đúng cách – và bạn sẽ không đi một mình"
+                    </div>
+                </div>
+                <div class="inner-content">
+                    <div class="inner-info">
+                        <h3>Giáo viên phụ trách</h3>
+                        <h1>NGUYỄN THU TRÀ</h1>
+                    </div>
+                    <div class="inner-info-2">
+                        Sáng lập MGTA English
+                    </div>
+                </div>
+            </div>
+            <div class="profile-section">
+                <div class="profile-box">
+                    <h2 class="section-title pink">Học tập</h2>
+                    <ul>
+                        <li>Tốt nghiệp loại giỏi (Upper-second Division) ngành Quản Trị Kinh Doanh - Chương trình liên
+                            kết quốc
+                            tế (Top-Up) University of the West of England</li>
+                        <li>Chứng chỉ tiếng Anh TEG - Level 4</li>
+                    </ul>
+                </div>
+
+                <div class="profile-box">
+                    <h2 class="section-title mint">Kinh nghiệm</h2>
+                    <ul>
+                        <li>6 năm chuyên dạy kèm tiếng Anh mất gốc dành cho học sinh cấp 2 từ lớp 6–9 theo chương trình
+                            của BGD
+                            (sách giáo khoa Global Success)</li>
+                        <li>2 năm dạy kèm chương trình tiếng Anh Cambridge Vinschool tiểu học</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="section-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="inner-main">
+                        <h1 class="inner-title">CÂU HỎI THƯỜNG GẶP</h1>
+                        <h3 class="inner-subtitle">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+                            consectetur velit</h3>
+                        <div class="line"></div>
+                        <div class="inner-body">
+                            <div class="accordion" id="accordionFaqs">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link btn-block text-left" type="button"
+                                                data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                Khóa học phù hợp với học sinh cấp mấy?
+                                            </button>
+                                        </h2>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                        data-parent="#accordionFaqs">
+                                        <div class="card-body">
+                                            Các em học sinh cấp 2, cấp 3 đang bị mất gốc, yếu ngữ pháp, từ vựng, điểm
+                                            trên lớp không cao, muốn cải thiện điểm số và tiến bộ vượt bậc sau 1 tháng.
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo">
+                                                Sau bao lâu thì học sinh có thể thấy sự tiến bộ?
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                        data-parent="#accordionFaqs">
+                                        <div class="card-body">
+                                            Thông thường chỉ sau 4–6 tuần, học sinh sẽ cảm nhận rõ sự tự tin hơn trong
+                                            lớp, nắm chắc các cấu trúc ngữ pháp quan trọng và cải thiện điểm số trong
+                                            các bài kiểm tra.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header" id="headingFour">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                                data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                                                aria-controls="collapseFour">
+                                                Chương trình đào tạo có bám sát SGK không?
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                        data-parent="#accordionFaqs">
+                                        <div class="card-body">
+                                            Giáo trình được biên soạn bám sát chương trình của Bộ Giáo dục, đồng thời bổ
+                                            sung kiến thức mở rộng, giúp học sinh nắm chắc nền tảng và nâng cao kỹ năng
+                                            sử dụng tiếng Anh thực tế.
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                                data-toggle="collapse" data-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                Phụ huynh có được theo dõi tiến trình học tập của con không?
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#accordionFaqs">
+                                        <div class="card-body">
+                                            Phụ huynh sẽ nhận được báo cáo học tập định kỳ, điểm số, nhận xét và lời
+                                            khuyên từ cô để đồng hành cùng con trong quá trình học.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header" id="headingFive">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                                data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+                                                aria-controls="collapseFive">
+                                                Em có thể nhận được gì sau khóa học?
+                                            </button>
+                                        </h2>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                        data-parent="#accordionFaqs">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li>Cải thiện điểm số trên lớp sau một học kì, từ mất gốc tiếng anh đạt
+                                                    ngưỡng 5-6.5+</li>
+                                                <li>Tự tin khi làm bài kiểm tra, bài thi trên lớp</li>
+                                                <li>Cải thiện kĩ năng làm bài đọc hiểu, nắm vững ngữ pháp cơ bản</li>
+                                                <li>Nâng cao và mở rộng vốn từ vựng trong chương trình tiếng anh cấp 2
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="footer"></div>
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
